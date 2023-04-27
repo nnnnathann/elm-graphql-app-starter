@@ -1,0 +1,14 @@
+
+scalar DateTime
+
+type Query {
+    """
+    hello, world!
+    """
+    message: Message!
+}
+
+type Message {
+    text: String!
+    requestedAt: DateTime!
+}

@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "scripts": {
+    "build": "graphql-codegen && tsc && cp src/graphql/v1.graphql dist/graphql/v1.graphql",
+    "codegen": "graphql-codegen",
+    "dev:server": "tsx --watch src/cmd/server.ts",
+    "dev:codegen": "graphql-codegen -w",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@total-typescript/ts-reset": "^0.4.2",
+    "@types/dotenv-flow": "^3.2.0",
+    "@types/node": "^18.16.1",
+    "dataloader": "^2.2.2",
+    "dotenv-flow": "^3.2.0",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
+    "graphql-scalars": "^1.21.3",
+    "graphql-yoga": "^3.9.1",
+    "string-strip-html": "^13.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@graphql-codegen/cli": "^3.3.1",
+    "@graphql-codegen/introspection": "^3.0.1",
+    "@graphql-codegen/typescript-resolvers": "^3.2.1",
+    "@types/express": "^4.17.17",
+    "cosmiconfig-toml-loader": "^1.0.0",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.6",
+    "typescript": "^4.9.5",
+    "vitest": "^0.30.1"
+  }
+}

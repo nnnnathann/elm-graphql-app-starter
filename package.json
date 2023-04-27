@@ -1,0 +1,11 @@
+{
+  "main": "./backend/dist/cmd/server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node backend/dist/cmd/server.js",
+    "dev": "run-pty % pnpm run -F backend dev:server % pnpm run -F backend dev:codegen % pnpm run -F web dev:elm % pnpm run -F web dev:codegen % pnpm run -F web dev:server",
+    "build": "pnpm run -r --sequential build"
+  },
+  "devDependencies": {
+    "run-pty": "^4.0.3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["ES2022"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "downlevelIteration": true,
+    "types": ["node"]
+  },
+  "exclude": ["./codegen.ts"]
+}

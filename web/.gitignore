@@ -1,0 +1,5 @@
+.elm-gql-cache
+node_modules
+elm-stuff
+public/Main.js
+dist
