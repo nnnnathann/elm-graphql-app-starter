@@ -1,14 +1,13 @@
-port module Main exposing (Flags, Model, Msg, main)
+port module Main exposing (AnimationState, Dimensions, Flags, Model, Msg, main)
 
 import Animator
 import Animator.Css
 import Api
 import Browser
-import Color exposing (Color)
+import Color
 import GraphQL.Engine as GQL
 import Html
 import Html.Attributes as Attr
-import Html.Events as Events
 import Json.Decode
 import Json.Encode
 import Queries.Hello.Hello as HelloQuery
@@ -173,16 +172,6 @@ view model =
         [ viewApp model ]
 
 
-isJust : Maybe a -> Bool
-isJust m =
-    case m of
-        Just _ ->
-            True
-
-        Nothing ->
-            False
-
-
 viewApp : Model -> Html.Html Msg
 viewApp model =
     case model.error of
@@ -255,35 +244,6 @@ showDate (Api.DateTime dt) =
     dt
 
 
-nonEmptyString : String -> Maybe String
-nonEmptyString str =
-    case str of
-        "" ->
-            Nothing
-
-        nestr ->
-            Just nestr
-
-
-nonEmptyList : List a -> Maybe (List a)
-nonEmptyList xs =
-    case xs of
-        [] ->
-            Nothing
-
-        _ ->
-            Just xs
-
-
 viewLoader : Html.Html msg
 viewLoader =
     Html.div [] [ Html.text "loading" ]
-
-
-appButton :
-    { onClick : msg
-    , label : String
-    }
-    -> Html.Html msg
-appButton { onClick, label } =
-    Html.button [ Events.onClick onClick, Attr.class "border px-2 py-1" ] [ Html.text label ]
